@@ -27,11 +27,11 @@ public class Testing {
             fail("Нет заголовка: Мое любимое стихотворение:");
         String old = "old";
         for (String s : lines) {
-<<<<<<< HEAD
+
             if (s.length() < 5&& s.equals("\\n"))
-=======
+
             if (s.length() < 5)
->>>>>>> origin/MyChangedInTesting
+
                 fail("Слишком короткие строки");
             if (old.equals(s))
                 fail("Есть одинаковые строки");
