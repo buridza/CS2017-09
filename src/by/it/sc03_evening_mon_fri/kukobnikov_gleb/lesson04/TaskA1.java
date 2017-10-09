@@ -35,12 +35,7 @@ Scanner sc=new Scanner(System.in);
 
 class TaskA1 {
     public static void main(String[] args) {
-        //Scanner sc=new Scanner(System.in);
-
-        //это файл не компилировался, вызывая ошибки у всех.
-        //поэтому мне пришлось его изменить.
-        //теперь у вас из-за этого будет конфликт слияния.
-        //Хмелев. Подойдите на занятии, расскажу подробнее.
+        Scanner sc=new Scanner(System.in);
 
     }
 
