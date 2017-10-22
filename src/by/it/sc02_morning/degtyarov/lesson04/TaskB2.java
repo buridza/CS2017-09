@@ -33,21 +33,5 @@ Lesson 04. Task B2. Нужно написать программу, котора
 */
 class TaskB2 {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
 
-        double d, x, x1, x2;
-
-        d = (b * b) - (4 * a * c);
-        x = (-b) / (2 * a);
-        x1 = (-b + Math.sqrt(d)) / (2 * a);
-        x2 = (-b - Math.sqrt(d)) / (2 * a);
-
-        if (d == 0) System.out.println(x);
-        if (d < 0) System.out.println("Отрицательный дискриминант");
-        if (d > 0) System.out.println(x1 + " " + x2);
-    }
 }
