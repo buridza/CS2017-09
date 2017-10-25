@@ -17,36 +17,31 @@ import java.util.List;
 
 
 public class TaskC1 {
-    public static void main(String[] args) throws Exception {
-        ArrayList<Integer> arr = new ArrayList<>();
+    public static void main(String[] args) throws Exception
+    {
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        for (int i = 0; i<20; i++) arr.add(Integer.parseInt(reader.readLine()));
+        for (int i = 0; i<20; i++) list.add(Integer.parseInt(reader.readLine()));
+
+
         ArrayList<Integer> list1 = new ArrayList<Integer>();
         ArrayList<Integer> list2 = new ArrayList<Integer>();
         ArrayList<Integer> list3 = new ArrayList<Integer>();
-         for (int x : arr) {
-            if (x % 3 == 0) {
-                list1.add(x);
-            }
-            if (x % 2 == 0) {
-                list2.add(x);
-            }
-            if ((x % 3 == 0) && (x % 2 == 0)) {
-                list1.add(x);
-                list2.add(x);
-            } else {
-            }//((x%3!=0)&&(x%2!=0))
-            list3.add(x);
+
+
+        for (int x : list){
+            if (x % 3 == 0) list1.add(x);
+            if (x % 2 == 0) list2.add(x);
+            if ((x%3!=0)&&(x%2!=0)) list3.add(x);
         }
+
         printList(list1);
         printList(list2);
         printList(list3);
     }
 
-    private static void printList(List<Integer> list) {
-
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
+    public static void printList(List<Integer> list) {
+        for (int x : list) System.out.println(x);
     }
 }
