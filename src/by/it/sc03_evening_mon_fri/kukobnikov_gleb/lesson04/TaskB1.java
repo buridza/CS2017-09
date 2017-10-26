@@ -23,13 +23,14 @@ float f - присваивание в десятичном формате
 Для автоматической проверки откройте и запустите класс Testing
 */
 
+
 strictfp class TaskB1 {
     public static  void main(String[] args) {
-        double d = 0;
-        double b = 0;
-        double o = 0;
-        double h = 0;
-        double f = 0;
+        double d = 111.111;
+        byte b = 111;
+        long o = 111;
+        int h = 111;
+        float f = (float) 111.111;
         System.out.println(d + b + o + h + f);
         System.out.println(d + " " + b + " " + o + " " + h + " " + f);
     }
