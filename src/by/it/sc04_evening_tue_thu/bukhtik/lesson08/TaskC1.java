@@ -58,6 +58,7 @@ public class TaskC1 {
         dog2.setWeight(c2);
         dog2.setPower(d2);
 
+
         if (true) {
             dog1.win(dog2);
             System.out.println(dog1.getName());
