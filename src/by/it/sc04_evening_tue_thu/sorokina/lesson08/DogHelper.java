@@ -12,7 +12,7 @@ public class DogHelper {
     }
 
    public static double averageAge(Dog[] dogs){
-       int sum = 0;
+       double sum = 0;
         for (int i = 0; i < dogs.length; i++) {
             sum += dogs[i].getAge();
         }

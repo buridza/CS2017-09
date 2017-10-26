@@ -64,7 +64,10 @@ public class Dog {
 //  Шансы на победу = 0.2 * возраст + 0.3 * вес + 0.5 * силу укуса.
 
    public static boolean win(Dog dog1, Dog dog2){
-        if(dog1.getAge()*0.2 + dog1.getWeight()*0.3+dog1.getPower()*0.5 > dog2.getAge()*0.2 + dog2.getWeight()*0.3 + dog2.getPower()*0.5)
+         double resultDog1 = dog1.getAge()*0.2 + dog1.getWeight()*0.3+dog1.getPower()*0.5;
+         double resultDog2 = dog2.getAge()*0.2 + dog2.getWeight()*0.3 + dog2.getPower()*0.5;
+
+        if(resultDog1 > resultDog2)
           return  true;
         else return false;
 
