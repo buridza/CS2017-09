@@ -40,21 +40,15 @@ public class TaskC1 {
                 res.add(aBigList);
             }
         }
-
             printList(k3);
-
             printList(k2);
-
             printList(res);
         }
-
         private static void printList(List<Integer> list)
         {
             for (Integer aList : list) {
                 System.out.println(aList);
             }
-
         }
-
     }
 
