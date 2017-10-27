@@ -9,6 +9,14 @@ class Event implements Comparable<Event>{
     private int start;
     private int stop;
 
+    public int getStart() { return start; }
+
+    public int getStop() { return stop; }
+
+    public void setStart(int start) { this.start = start; }
+
+    public void setStop(int stop) { this.stop = stop; }
+
     Event(int start, int stop) {
         this.start = start;
         this.stop = stop;
@@ -31,6 +39,6 @@ class Event implements Comparable<Event>{
         //0 если объекты равны
         //-1 если порядок следования в массиве  или коллекции this и otherEvent неправильный
 
-        return this.start-otherEvent.start;
+        return this.stop-otherEvent.stop;
     }
 }

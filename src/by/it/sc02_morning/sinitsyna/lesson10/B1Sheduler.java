@@ -45,11 +45,12 @@ public class B1Sheduler {
         result = new ArrayList<>();
         //ваше решение.
         Arrays.sort(events);
-        System.out.println("events="+ Arrays.toString(events));
-
-
-
-
+        result.add(events[0]);
+        for (int i=1; i<events.length; i++){
+            if (events[i].getStart() >= result.get(result.size()-1).getStop()) {
+                result.add(events[i]);
+            }
+        }
 
         return result;                        //вернем итог
     }

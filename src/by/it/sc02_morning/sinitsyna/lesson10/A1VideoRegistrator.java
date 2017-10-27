@@ -46,7 +46,7 @@ public class A1VideoRegistrator {
         int n=events.length;
         while (i<events.length) {               //пока есть незарегистрированные события
             double start = events[i];                //получим одно событие по левому краю
-            //и запомним время старта видеокамеры
+            result.add(start);                      //и запомним время старта видеокамеры
             double stop = start + workDuration;     //вычислим момент окончания работы видеокамеры
             while ((i < n) && (events[i] <= stop))       //и теперь пропустим все покрываемые
             {
