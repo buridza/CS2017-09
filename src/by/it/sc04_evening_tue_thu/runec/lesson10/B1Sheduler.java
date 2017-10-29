@@ -52,7 +52,7 @@ public class B1Sheduler {
                 result.add(events[i]);
 
         }
-
+//
 
         return result; //вернем итог
     }

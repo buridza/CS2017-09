@@ -24,6 +24,7 @@ public class Testing {
         assertEquals("Тест не пройден.", "[1.0, 2.2, 3.7, 5.5, 8.1]", starts.toString());
     }
 
+
     @Test
     public void B_Sheduler() throws Exception {
         Event[] events = {
