@@ -34,5 +34,4 @@ class TaskC3 {
         int i = sc.nextInt();
         System.out.println((Math.round(100 * i * (3.86 / 9.81))) / 100);
     }
-
 }
