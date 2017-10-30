@@ -19,7 +19,7 @@ public class FiboC1 {
 
     public static void main(String[] args) {
         FiboC1 fibo = new FiboC1();
-        int n = 10;
+        int n = 12;
         int m = 2;
 //        System.out.printf("fasterC(%d)=%d \n\t time=%d \n\n", n, fibo.fasterC(10, 2), fibo.time());
 //        System.out.printf("fasterC(%d)=%d \n\t time=%d \n\n", n, fibo.fasterC(1, 2), fibo.time());
@@ -62,6 +62,8 @@ public class FiboC1 {
         /*int
         result = (int)mod;
         else */
+        if (n==0)return 0L;
+        if (n==1) return 1L;
         return pizanoArray.get((int)mod).longValue();
     }
 
