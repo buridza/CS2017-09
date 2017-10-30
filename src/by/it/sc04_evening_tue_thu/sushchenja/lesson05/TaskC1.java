@@ -37,6 +37,77 @@ package by.it.sc04_evening_tue_thu.sushchenja.lesson05;
 
 */
 
-public class TaskC1 {
+import java.util.Scanner;
 
-}
+public class TaskC1 {
+    public static void main(String[] args) {
+        System.out.println("Какую вы хотите зарплату в $$$?");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        double b = 0.0;
+        double d = a*1.5;
+
+        if (a<300 || a>3000) {
+            System.out.println("Мы вам перезвоним!");
+        }
+        else {
+            double c;
+            for (int i = 0; i <=14 ; i++) {
+                switch (i) {
+                    case 1:
+                        c=d;
+                        System.out.println("За январь начислено "+"$"+c);
+                        break;
+                    case 2:
+                        c=d;
+                        System.out.println("За февраль начислено "+"$"+c);
+                        break;
+                    case 3:
+                        c=d;
+                        System.out.println("За март начислено "+"$"+c);
+                        break;
+                    case 4:
+                        c=d;
+                        System.out.println("За апрель начислено "+"$"+c);
+                        break;
+                    case 5:
+                        c=d;
+                        System.out.println("За май начислено "+"$"+c);
+                        break;
+                    case 6:
+                        c=a;
+                        System.out.println("За июнь начислено "+"$"+c);
+                        break;
+                    case 7:
+                        c=a;
+                        System.out.println("За июль начислено "+"$"+c);
+                        break;
+                    case 8:
+                        c=a;
+                        System.out.println("За август начислено "+"$"+c);
+                        break;
+                    case 9:
+                        c=d;
+                        System.out.println("За сентябрь начислено "+"$"+c);
+                        break;
+                    case 10:
+                        c=d;
+                        System.out.println("За октябрь начислено "+"$"+c);
+                        break;
+                    case 11:
+                        c=d;
+                        System.out.println("За ноябрь начислено "+"$"+c);
+                        break;
+                    case 12:
+                        c=d;
+                        System.out.println("За декабрь начислено "+"$"+c);
+                        break;
+                    default:
+                        c=b;
+                        System.out.println("За месяц "+i+" начислено $"+c);
+                }
+                if (c == 666) break;
+            }
+        }
+    }
+    }
