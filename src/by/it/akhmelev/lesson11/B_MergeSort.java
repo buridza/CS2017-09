@@ -22,38 +22,6 @@ Sample Output:
 */
 public class B_MergeSort {
 
-    private int[] merge(int[] ar_1, int[] ar_2){
-        int max = ar_1.length + ar_2.length;
-        int[] result = new int[max];
-        int m = 0, n = 0;
-        for (int i = 0; i < max; i++){
-            if (m >= ar_1.length & n < ar_2.length){
-                result[i] = ar_2[n];
-                n++;
-            }else if(n >= ar_2.length & m < ar_1.length){
-                result[i] = ar_1[m];
-                m++;
-            }else if (ar_1[m] <= ar_2[n] & m < ar_1.length){
-                result[i] = ar_1[m];
-                m++;
-            }else {
-                result[i] = ar_2[n];
-                n++;
-            }
-        }
-        return result;
-    }
-
-    private int[] mergeSort(int[] arr, int l, int r){
-        int[] result = new int[1];
-        int index = (l + r) >>> 1;
-        if (l < r){
-           return merge(mergeSort(arr, l, index), mergeSort(arr, index + 1, r));
-        }else {
-            result[0] = arr[l];
-            return result;
-        }
-    }
 
     int[] getMergeSort(InputStream stream) throws FileNotFoundException {
         //подготовка к чтению данных
@@ -66,10 +34,14 @@ public class B_MergeSort {
         for (int i = 0; i < n; i++)
             a[i] = scanner.nextInt();
         System.out.println("Прочитан массив a="+ Arrays.toString(a));
-        // тут ваше решение (реализуйте сортировку слиянием)
+        // тут реализуйте сортировку слиянием
         // https://ru.wikipedia.org/wiki/Сортировка_слиянием
+        //!!!!!!!!!!!!!!!!!!!!!!!!     тут ваше решение   !!!!!!!!!!!!!!!!!!!!!!!!
 
-        a = mergeSort(a, 0, a.length - 1);
+
+
+
+
 
         //!!!!!!!!!!!!!!!!!!!!!!!!!     КОНЕЦ ЗАДАЧИ     !!!!!!!!!!!!!!!!!!!!!!!!!
         return a;
