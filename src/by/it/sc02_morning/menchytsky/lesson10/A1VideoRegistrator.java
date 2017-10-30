@@ -42,9 +42,9 @@ public class A1VideoRegistrator {
                 C*(n * n) + C1*n = O(n*n) */
         //комментарии от проверочного решения сохранены для подсказки, но вы можете их удалить.
         //Ваше решение тут
-        int i=0;                              //i - это индекс события events[i]
+        int i=0;                               //i - это индекс события events[i]
         Arrays.sort(events);
-        int n=events.length;//подготовка к жадному поглощению массива событий
+        int n=events.length;                   //подготовка к жадному поглощению массива событий
         while(i<events.length){
             double start=events[i];
             result.add(start);

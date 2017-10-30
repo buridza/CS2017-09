@@ -18,6 +18,7 @@ package by.it.sc02_morning.menchytsky.lesson10;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class C1GreedyKnapsack {
@@ -40,15 +41,27 @@ public class C1GreedyKnapsack {
         //итогом является максимально воможная стоимость вещей в рюкзаке
         //вещи можно резать на кусочки (непрерывный рюкзак)
         double result = 0;
+        Arrays.sort(items);
+
+        for (int i = 0; i <items.length ; i++) {
+            if(items[i].getWeight()<W){
+             result+=items[i].getCost();
+             W-=items[i].getWeight();
+            }
+            else{
+                int y=0;
+                y=items[i].getWeight()/W;
+                result+=items[i].getCost()/y;
+                W-=items[i].getWeight()/y;
+            }
+            if(W==0) break;
+        }
+
         //реализуйте алгоритм сбора рюкзака
         //будет особенно хорошо, если с собственной сортировкой
         //кроме того, можете описать свой компаратор в классе Item
 
         //ваше решение.
-
-
-
-
 
         System.out.printf("Удалось собрать рюкзак на сумму %f\n",result);
         return result;

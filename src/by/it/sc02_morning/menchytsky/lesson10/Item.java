@@ -14,6 +14,16 @@ class Item implements Comparable<Item> {
             this.weight = weight;
         }
 
+        int getWeight (){
+            return weight;
+        }
+
+        int getCost(){
+            return cost;
+        }
+
+
+
         @Override
         public String toString() {
             return "Item{" +
@@ -23,10 +33,14 @@ class Item implements Comparable<Item> {
         }
 
         @Override
-        public int compareTo(Item o) {
+        public int compareTo(Item otherItem) {
+            int result=0;
+            if((this.cost/this.weight)>(otherItem.cost/otherItem.weight)) result = -1;
+            if ((this.cost/this.weight)==(otherItem.cost/otherItem.weight)) result = 0;
+            if ((this.cost/this.weight)<(otherItem.cost/otherItem.weight)) result = 1;
             //тут может быть ваш компаратор
 
 
-            return 0;
+            return result;
         }
     }
