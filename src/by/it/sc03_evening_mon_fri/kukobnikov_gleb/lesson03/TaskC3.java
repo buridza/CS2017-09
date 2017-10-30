@@ -29,4 +29,9 @@ import java.util.Scanner;
 
 */
 class TaskC3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        System.out.println((Math.round(100 * i * (3.86 / 9.81))) / 100);
     }
+}
