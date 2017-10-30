@@ -53,7 +53,6 @@ public class A1VideoRegistrator {
                 i ++;
                                                     //за время работы видеокамеры события
                                                       //увеличивая индекс.
-
         }
         return result;                                //вернем итог
     }
