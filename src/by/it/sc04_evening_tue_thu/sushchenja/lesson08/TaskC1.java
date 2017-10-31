@@ -34,17 +34,18 @@ import java.util.Scanner;
 
 public class TaskC1 {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         Dog dog1 = new Dog ();
         dog1.setName(sc.next());
         dog1.setAge(sc.nextInt());
         dog1.setWeight(sc.nextInt());
-        dog1.setPower(sc.nextInt());
+        dog1.setPower(sc.nextDouble());
         Dog dog2 = new Dog ();
         dog2.setName(sc.next());
         dog2.setAge(sc.nextInt());
         dog2.setWeight(sc.nextInt());
-        dog2.setPower(sc.nextInt());
+        dog2.setPower(sc.nextDouble());
         if (dog1.win(dog2)) System.out.println(dog1.getName());
         else System.out.println(dog2.getName());
 
