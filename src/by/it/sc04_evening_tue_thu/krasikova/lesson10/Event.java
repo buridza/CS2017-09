@@ -31,6 +31,6 @@ class Event implements Comparable<Event>{
         //0 если объекты равны
         //-1 если порядок следования в массиве  или коллекции this и otherEvent неправильный
 
-        return 0; //this.stop-otherEvent.stop;
+        return this.stop-otherEvent.stop;
     }
 }
