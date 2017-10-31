@@ -35,7 +35,6 @@ class TaskC3 {
 
         Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
-
         System.out.println(getWeight(i));
 
     }
@@ -44,7 +43,7 @@ class TaskC3 {
 
         double weightMars = x * 3.86 / 9.81;
         int weight = (int) (weightMars * 100 + 0.5); // (+0.5) округление по законам математики
-
+        System.out.println(weight);
         return (double) weight / 100;
 
 
