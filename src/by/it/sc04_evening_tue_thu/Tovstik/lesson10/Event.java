@@ -5,13 +5,21 @@ package by.it.sc04_evening_tue_thu.Tovstik.lesson10;
 
 Обратите внимание на метод compareTo
 */
-class Event implements Comparable<Event>{
+class Event implements Comparable<Event> {
     private int start;
     private int stop;
 
     Event(int start, int stop) {
         this.start = start;
         this.stop = stop;
+    }
+
+    public int getStart(){
+        return start;
+    }
+
+    public int getStop(){
+        return stop;
     }
 
     @Override
@@ -22,15 +30,23 @@ class Event implements Comparable<Event>{
 
     @Override
     public int compareTo(Event otherEvent) {
-        //сортировка по умолчанию не работает.
-        //переопределите возвращаемое значение
-        //используя this и otherEvent
+      return this.stop-otherEvent.stop;
 
-        //подсказка, правильно написанный компаратор возвращает
-        //1 если порядок следования в массиве или коллекции this и otherEvent правильный
-        //0 если объекты равны
-        //-1 если порядок следования в массиве  или коллекции this и otherEvent неправильный
 
-        return this.start- otherEvent.start;
+
+
+
+
+            //сортировка по умолчанию не работает.
+            //переопределите возвращаемое значение
+            //используя this и otherEvent
+
+            //подсказка, правильно написанный компаратор возвращает
+            //1 если порядок следования в массиве или коллекции this и otherEvent правильный
+            //0 если объекты равны
+            //-1 если порядок следования в массиве  или коллекции this и otherEvent неправильный
+
+ //           return this.start - otherEvent.start;
+
     }
 }
