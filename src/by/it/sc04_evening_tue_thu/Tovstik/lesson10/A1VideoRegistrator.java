@@ -48,7 +48,7 @@ public class A1VideoRegistrator {
         double start;
         double stop;
 
-        Arrays.sort(events);                                         //подготовка к жадному поглощению массива событий
+        Arrays.sort(events);                  //подготовка к жадному поглощению массива событий
 
         while (i < n) {                      //пока есть незарегистрированные события
             start = events[i];                  //получим одно событие по левому краю
