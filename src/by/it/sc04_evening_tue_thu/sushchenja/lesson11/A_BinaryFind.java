@@ -51,11 +51,23 @@ public class A_BinaryFind {
             //тут реализуйте бинарный поиск индекса
             //для значения value в саммиве a
             //результат поиска сохраните в result[i]
-            int index = Arrays.binarySearch(a,value);
-            if (index<0)
+            //int index = Arrays.binarySearch(a,value);
+            int low = 0, high = a.length;
+            int mid;
+            while (low < high) { // если здесь поставить "<=" все ломается
+                mid = (low + high)>>>1;
+                if (value==a[mid]){
+                    result [i] = mid+1;
+                    break;
+                } else {
+                    if (value<a[mid]){
+                        high = mid; // в презентации mid -1
+                    } else {
+                        low = mid+1;
+                    }
+                }
                 result [i] = -1;
-            else
-                result [i] = index+1;
+            }
         }
         //!!!!!!!!!!!!!!!!!!!!!!!!!     КОНЕЦ ЗАДАЧИ     !!!!!!!!!!!!!!!!!!!!!!!!!
         return result;
