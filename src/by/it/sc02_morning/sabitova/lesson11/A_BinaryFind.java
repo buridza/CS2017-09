@@ -1,9 +1,8 @@
-package by.it.sc04_evening_tue_thu.sushchenja.lesson11;
+package by.it.sc02_morning.sabitova.lesson11;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -42,7 +41,6 @@ public class A_BinaryFind {
         for (int i = 1; i <= n; i++) {
             a[i-1] = scanner.nextInt();
         }
-
         //размер массива индексов
         int k = scanner.nextInt();
         int[] result=new int[k];
@@ -51,28 +49,11 @@ public class A_BinaryFind {
             //тут реализуйте бинарный поиск индекса
             //для значения value в саммиве a
             //результат поиска сохраните в result[i]
-            //int index = Arrays.binarySearch(a,value);
-            int low = 0, high = a.length;
-            int mid;
-            while (low < high) { // если здесь поставить "<=" все ломается
-                mid = (low + high)>>>1;
-                if (value==a[mid]){
-                    result [i] = mid+1;
-                    break;
-                } else {
-                    if (value<a[mid]){
-                        high = mid; // в презентации mid -1
-                    } else {
-                        low = mid+1;
-                    }
-                }
-                result [i] = -1;
-            }
+            result[i] = binarySearch(a, value);
         }
         //!!!!!!!!!!!!!!!!!!!!!!!!!     КОНЕЦ ЗАДАЧИ     !!!!!!!!!!!!!!!!!!!!!!!!!
         return result;
     }
-
 
     public static void main(String[] args) throws FileNotFoundException {
         String root = System.getProperty("user.dir") + "/src/";
@@ -85,5 +66,17 @@ public class A_BinaryFind {
             System.out.print(index+" ");
         }
     }
-
+            private static int binarySearch(int[] a, int value) {
+            int left = 0;
+            int right = a.length - 1;
+            while (left <= right) {
+                int c = (left + right) / 2;
+                if (a[c] == value) {
+                    return c + 1;
+                } else if (value < a[c]) {
+                    right = c - 1;
+                } else {
+                    left = c + 1;
+            return -1;
+        }
 }

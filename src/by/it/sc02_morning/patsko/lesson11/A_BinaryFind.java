@@ -1,4 +1,4 @@
-package by.it.sc04_evening_tue_thu.sushchenja.lesson11;
+package by.it.sc02_morning.patsko.lesson11;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -51,23 +51,11 @@ public class A_BinaryFind {
             //тут реализуйте бинарный поиск индекса
             //для значения value в саммиве a
             //результат поиска сохраните в result[i]
-            //int index = Arrays.binarySearch(a,value);
-            int low = 0, high = a.length;
-            int mid;
-            while (low < high) { // если здесь поставить "<=" все ломается
-                mid = (low + high)>>>1;
-                if (value==a[mid]){
-                    result [i] = mid+1;
-                    break;
-                } else {
-                    if (value<a[mid]){
-                        high = mid; // в презентации mid -1
-                    } else {
-                        low = mid+1;
-                    }
-                }
-                result [i] = -1;
+            int index= Arrays.binarySearch(a,value);
+            if(index<0){
+                result[i]=-1;
             }
+            else result[i]=index+1;
         }
         //!!!!!!!!!!!!!!!!!!!!!!!!!     КОНЕЦ ЗАДАЧИ     !!!!!!!!!!!!!!!!!!!!!!!!!
         return result;
@@ -76,7 +64,8 @@ public class A_BinaryFind {
 
     public static void main(String[] args) throws FileNotFoundException {
         String root = System.getProperty("user.dir") + "/src/";
-        InputStream stream = new FileInputStream(root + "by/it/akhmelev/lesson11/dataA.txt");
+
+        InputStream stream = new FileInputStream(root + "by/it/sc02_morning/patsko/lesson11/dataA.txt");
         A_BinaryFind instance = new A_BinaryFind();
         //long startTime = System.currentTimeMillis();
         int[] result=instance.findIndex(stream);

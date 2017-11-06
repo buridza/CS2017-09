@@ -1,9 +1,8 @@
-package by.it.sc04_evening_tue_thu.sushchenja.lesson11;
+package by.it.sc04_evening_tue_thu.yanushkevich.lesson11;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -51,23 +50,11 @@ public class A_BinaryFind {
             //тут реализуйте бинарный поиск индекса
             //для значения value в саммиве a
             //результат поиска сохраните в result[i]
-            //int index = Arrays.binarySearch(a,value);
-            int low = 0, high = a.length;
-            int mid;
-            while (low < high) { // если здесь поставить "<=" все ломается
-                mid = (low + high)>>>1;
-                if (value==a[mid]){
-                    result [i] = mid+1;
-                    break;
-                } else {
-                    if (value<a[mid]){
-                        high = mid; // в презентации mid -1
-                    } else {
-                        low = mid+1;
-                    }
-                }
-                result [i] = -1;
-            }
+
+
+
+
+            result[i]=-1;
         }
         //!!!!!!!!!!!!!!!!!!!!!!!!!     КОНЕЦ ЗАДАЧИ     !!!!!!!!!!!!!!!!!!!!!!!!!
         return result;
