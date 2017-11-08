@@ -22,11 +22,9 @@ class Item implements Comparable<Item> {
                     '}';
         }
 
-        @Override
+    @Override
         public int compareTo(Item o) {
             //тут может быть ваш компаратор
-
-
             return 0;
         }
     }

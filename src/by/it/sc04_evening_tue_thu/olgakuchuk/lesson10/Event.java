@@ -27,8 +27,7 @@ class Event implements Comparable<Event>{
 
     Event(int start, int stop) {
         this.start = start;
-        this.stop = stop;
-    }
+        this.stop = stop;}
 
     @Override
     public String toString() {

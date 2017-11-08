@@ -48,7 +48,6 @@ public class B1Sheduler {
 
         Arrays.sort(events);
 
-
         result.add(events[0]);
         for (int i = 1; i <events.length ; i++) {
 

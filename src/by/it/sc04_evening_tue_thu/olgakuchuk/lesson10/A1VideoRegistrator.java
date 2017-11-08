@@ -26,8 +26,7 @@ public class A1VideoRegistrator {
         //рассчитаем моменты старта, с длиной сеанса 1
         List<Double> starts=instance.calcStartTimes(events,workDuration);
         //покажем полученные моменты старта
-        System.out.println(starts);
-    }
+        System.out.println(starts);}
 
     //модификаторы доступа опущены для возможности тестирования
     List<Double> calcStartTimes(double[] events, double workDuration){
