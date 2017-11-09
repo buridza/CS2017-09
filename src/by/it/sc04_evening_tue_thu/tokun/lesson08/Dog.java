@@ -6,28 +6,17 @@ public class Dog {
     private int weight;
     private double power;
 
-    String getName() {
-        return this.name;
-    }
+    String getName() { return this.name; }
+    void setName(String name) { this.name = name; }
 
-    void setName(String name) {
-        this.name = name;
-    }
+    int getAge() { return this.age; }
+    void setAge(int age) { this.age = age; }
 
-    int getAge() {
-        return this.age;
-    }
-
-    void setAge(int age) {
-        this.age = age;
-    }
-
-    int getWeight() { return this.weight; }
-
+    int getWeight() {
+        return this.weight; }
     void setWeight(int weight) { this.weight = weight; }
 
     double getPower() { return this.power; }
-
     void setPower( double power) { this.power = power; }
 
 
