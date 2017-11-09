@@ -49,7 +49,22 @@ package by.it.sc04_evening_tue_thu.sushchenja.lesson06;
 1000000 = 64
 
 */
+import java.util.Scanner;
 
 public class TaskC1 {
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long dec = 1;
+        int num = sc.nextInt();
+        for (int i = 0; i <= num; i++) {
+            String bin = Long.toBinaryString(dec);
+            String s = "";
+            for (int j = 1; j<=num-i; j++){
+                s = s+"0";
+            }
+            bin = s + bin;
+            System.out.println(bin + " = " + dec);
+            dec = dec << 1;
+        }
+    }
 }

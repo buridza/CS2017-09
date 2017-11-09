@@ -17,5 +17,23 @@ package by.it.sc04_evening_tue_thu.sushchenja.lesson06;
 
  */
 public class TaskC2 {
+    public static void main(String[] args) {
+        int k=1;
+        long f;
+        do{
+            f=fact(k);
+            k++;
 
+        }while (f>0);
+        f = fact(k-2);
+        System.out.println(f + " = " + Long.toHexString(f) + " = " + Long.toBinaryString(f));
+    }
+
+    private static long fact(int k) {
+        long ft = 1;
+        for (int i = 1; i<=k; i++){
+            ft = ft*i;
+        }
+        return ft;
+    }
 }
