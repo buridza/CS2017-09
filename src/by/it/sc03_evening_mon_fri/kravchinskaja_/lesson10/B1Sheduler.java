@@ -24,12 +24,12 @@ public class B1Sheduler {
     public static void main(String[] args) {
         B1Sheduler instance = new B1Sheduler();
         Event[] events = {  new Event(0, 3),  new Event(0, 1), new Event(1, 2), new Event(3, 5),
-                            new Event(1, 3),  new Event(1, 3), new Event(1, 3), new Event(3, 6),
-                            new Event(2, 7),  new Event(2, 3), new Event(2, 7), new Event(7, 9),
-                            new Event(3, 5),  new Event(2, 4), new Event(2, 3), new Event(3, 7),
-                            new Event(4, 5),  new Event(6, 7), new Event(6, 9), new Event(7, 9),
-                            new Event(8, 9),  new Event(4, 6), new Event(8, 10), new Event(7, 10)
-                          };
+                new Event(1, 3),  new Event(1, 3), new Event(1, 3), new Event(3, 6),
+                new Event(2, 7),  new Event(2, 3), new Event(2, 7), new Event(7, 9),
+                new Event(3, 5),  new Event(2, 4), new Event(2, 3), new Event(3, 7),
+                new Event(4, 5),  new Event(6, 7), new Event(6, 9), new Event(7, 9),
+                new Event(8, 9),  new Event(4, 6), new Event(8, 10), new Event(7, 10)
+        };
 
         //рассчитаем оптимальное заполнение аудитории
         List<Event> starts = instance.calcStartTimes(events,0,10);
@@ -42,35 +42,22 @@ public class B1Sheduler {
         //в период [from, int] (включительно).
         //оптимизация проводится по наибольшему числу непересекающихся событий.
         //начало и конец событий могут совпадать.
-        List<Event> result;
-        result = new ArrayList<>();
+        List<Event> result = new ArrayList<>();
         //ваше решение.
 
         System.out.println(Arrays.toString(events));
         Arrays.sort(events);
         System.out.println(Arrays.toString(events));
-
-
-        int i = 0;
+        int i=0;
         double lasttime = 0;
-        while (i < events.length) {
-            double minValue = Double.MAX_VALUE;
-            int resultIndex = 0;
-            for (int j = 0; j< events.length; j++) {
-                if ((events[j].getStop() < minValue) && (events[j].getStart() >= lasttime))
-                {
-                    minValue = events[j].getStop();
-                    resultIndex = j;
-                }
+        while(i<events.length) {
+            if (events[i].getStart()>=lasttime) {
+                result.add(events[i]);
+                lasttime=events[i].getStop();
             }
-
-            if(events[resultIndex].getStart() >= lasttime){
-                result.add(events[resultIndex]);
-                lasttime = events[resultIndex].getStop();
-
+            while (i<events.length && events[i].getStart()<lasttime) {
+                i++;
             }
-            while (i<events.length&& events[i].getStart()<=lasttime)
-            i++;
         }
 
         return result;                        //вернем итог
