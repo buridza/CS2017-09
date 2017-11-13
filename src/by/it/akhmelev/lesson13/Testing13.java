@@ -3,6 +3,7 @@ package by.it.akhmelev.lesson13;
 import org.junit.Test;
 
 import java.io.*;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 import static org.junit.Assert.assertTrue;
@@ -13,7 +14,7 @@ import static org.junit.Assert.fail;
 //поставьте курсор на следующую строку и нажмите Ctrl+Shift+F10
 public class Testing13 {
 
-    @Test(timeout = 500)
+    @Test(timeout = 1500)
     public void testTaskA1() throws Exception {
         run("12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1").
                 include("[12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0]").
@@ -24,11 +25,14 @@ public class Testing13 {
                 include("117.0");
     }
 
-    @Test(timeout = 500)
+    @Test(timeout = 1500)
     public void testTaskB1() throws Exception {
-        if (findClass("Salary")==null){
-            fail("Нет класса Salary");
-        }
+        Class<?> cl=findClass("Salary");
+        if (cl==null) fail("Нет класса Salary");
+        findConstructor(cl,double[].class);
+        findMethod(cl,"sort");
+        findMethod(cl,"getSalary");
+        findMethod(cl,"getSum");
         run("12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1").
                 include("[12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0]").
                 include("78.0").
@@ -41,11 +45,15 @@ public class Testing13 {
 
 
 
-    @Test(timeout = 500)
+    @Test(timeout = 1500)
     public void testTaskC1() throws Exception {
-        if (findClass("Salary")==null){
-            fail("Нет класса Salary");
-        }
+        Class<?> cl=findClass("Salary");
+        if (cl==null) fail("Нет класса Salary");
+        findConstructor(cl,double[].class);
+        findConstructor(cl,String[].class);
+        findMethod(cl,"sort");
+        findMethod(cl,"getSalary");
+        findMethod(cl,"getSum");
         run("12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1").
                 include("[12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0]").
                 include("78.0").
@@ -70,6 +78,33 @@ public class Testing13 {
             return Class.forName(dogPath);
         } catch (ClassNotFoundException e) {
             fail("\nТест не пройден. Класс " + SimpleName + " не найден.");
+        }
+        return null;
+    }
+
+    private Method findMethod(Class<?> cl, String name, Class... param) {
+        try {
+            return cl.getDeclaredMethod(name, param);
+        } catch (NoSuchMethodException e) {
+            fail("\nТест не пройден. Метод " + cl.getName() + "." + name + " не найден");
+        }
+        return null;
+    }
+
+    private Constructor<?> findConstructor(Class<?> cl, Class<?>... param) {
+        try {
+            return cl.getDeclaredConstructor(param);
+        } catch (NoSuchMethodException e) {
+            fail("\nТест не пройден. Конструктор " + cl.getName() + " не найден (с числом параметров: "+param.length+")");
+        }
+        return null;
+    }
+
+    private Object invoke(Method method, Object o, Object... value) {
+        try {
+            return method.invoke(o, value);
+        } catch (Exception e) {
+            fail("\nНе удалось вызвать метод " + method.getName());
         }
         return null;
     }
