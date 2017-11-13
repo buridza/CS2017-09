@@ -108,7 +108,6 @@ public class A_QSort {
                 if(segments[i].start<=points[j] && segments[i].stop>=points[j]){
                     result[j]++;
                 }
-
             }
         }
 
