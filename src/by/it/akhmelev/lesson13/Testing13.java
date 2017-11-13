@@ -6,6 +6,7 @@ import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -29,10 +30,12 @@ public class Testing13 {
     public void testTaskB1() throws Exception {
         Class<?> cl=findClass("Salary");
         if (cl==null) fail("Нет класса Salary");
-        findConstructor(cl,double[].class);
+        Constructor<?> c=findConstructor(cl,double[].class);
         findMethod(cl,"sort");
         findMethod(cl,"getSalary");
-        findMethod(cl,"getSum");
+        Method m=findMethod(cl,"getSum");
+        Object sum=m.invoke(c.newInstance(new double[]{1,2,3}));
+        assertEquals("Сумма массива {1,2,3} считается некорректно", sum.toString(),"6.0");
         run("12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1").
                 include("[12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0]").
                 include("78.0").
@@ -49,11 +52,13 @@ public class Testing13 {
     public void testTaskC1() throws Exception {
         Class<?> cl=findClass("Salary");
         if (cl==null) fail("Нет класса Salary");
-        findConstructor(cl,double[].class);
-        findConstructor(cl,String[].class);
+        Constructor<?> c=findConstructor(cl,double[].class);
         findMethod(cl,"sort");
         findMethod(cl,"getSalary");
-        findMethod(cl,"getSum");
+        Method m=findMethod(cl,"getSum");
+        Object sum=m.invoke(c.newInstance(new double[]{1,2,3}));
+        assertEquals("Сумма массива {1,2,3} считается некорректно", sum.toString(),"6.0");
+        findConstructor(cl,String[].class);
         run("12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1").
                 include("[12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0]").
                 include("78.0").
