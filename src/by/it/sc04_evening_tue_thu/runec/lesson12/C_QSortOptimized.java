@@ -37,7 +37,7 @@ public class C_QSortOptimized {
     private class Segment  implements Comparable{
         int start;
         int stop;
-
+//
         Segment(int start, int stop){
             this.start = start;
             this.stop = stop;
