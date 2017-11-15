@@ -25,4 +25,5 @@ String toString()   - метод возвращает строку "Автомо
 */
 
 public class TaskA1 {
+
 }
