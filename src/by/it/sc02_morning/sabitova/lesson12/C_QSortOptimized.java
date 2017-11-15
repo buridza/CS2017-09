@@ -1,4 +1,4 @@
-package by.it.sc04_evening_tue_thu.runec.lesson12;
+package by.it.sc02_morning.sabitova.lesson12;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -37,7 +37,7 @@ public class C_QSortOptimized {
     private class Segment  implements Comparable{
         int start;
         int stop;
-//
+
         Segment(int start, int stop){
             this.start = start;
             this.stop = stop;

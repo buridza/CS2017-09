@@ -1,4 +1,4 @@
-package by.it.sc02_morning.opanovich.lesson11;
+package by.it.sc02_morning.lutskevichm.lesson11;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -30,7 +30,7 @@ public class B_MergeSort {
         //размер массива
         int n = scanner.nextInt();
         //сам массив
-        int[] a = new int[n];
+        int[] a=new int[n];
         for (int i = 0; i < n; i++)
             a[i] = scanner.nextInt();
         System.out.println("Прочитан массив a="+ Arrays.toString(a));
@@ -38,7 +38,11 @@ public class B_MergeSort {
         // https://ru.wikipedia.org/wiki/Сортировка_слиянием
         //!!!!!!!!!!!!!!!!!!!!!!!!     тут ваше решение   !!!!!!!!!!!!!!!!!!!!!!!!
 
-        a = mergeSort(a, 0, a.length - 1);
+
+
+
+
+
         //!!!!!!!!!!!!!!!!!!!!!!!!!     КОНЕЦ ЗАДАЧИ     !!!!!!!!!!!!!!!!!!!!!!!!!
         return a;
     }
@@ -46,7 +50,7 @@ public class B_MergeSort {
 
     public static void main(String[] args) throws FileNotFoundException {
         String root = System.getProperty("user.dir") + "/src/";
-        InputStream stream = new FileInputStream(root + "by/it/sc02_morning/opanovich/lesson11/dataB.txt");
+        InputStream stream = new FileInputStream(root + "by/it/akhmelev/lesson11/dataB.txt");
         B_MergeSort instance = new B_MergeSort();
         //long startTime = System.currentTimeMillis();
         int[] result=instance.getMergeSort(stream);
@@ -54,30 +58,5 @@ public class B_MergeSort {
         //long finishTime = System.currentTimeMillis();
     }
 
-    private static int[] mergeSort(int[] a, int left, int right) {
-
-        if (left == right) {
-            return new int[]{a[left]};
-        }
-        int middle = (left + right) / 2;
-        return merge(mergeSort(a, left, middle), mergeSort(a, middle + 1, right));
-    }
-
-    private static int[] merge(int[] a, int[] b) {
-
-        int[] result = new int[a.length + b.length];
-        for (int i = 0, conA = 0, conB = 0; i < result.length; i++) {
-            if (conA == a.length) {
-                result[i] = b[conB++];
-            } else if (conB == b.length) {
-                result[i] = a[conA++];
-            } else if (a[conA] > b[conB]) {
-                result[i] = b[conB++];
-            } else {
-                result[i] = a[conA++];
-            }
-        }
-        return result;
-    }
 
 }
